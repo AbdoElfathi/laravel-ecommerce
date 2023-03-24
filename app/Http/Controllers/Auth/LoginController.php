@@ -32,7 +32,7 @@ class LoginController extends Controller
     protected function authenticated()
     {
         if (Auth::user()->hasRole('admin')) {
-            return redirect('admin/dashboard')->with('status', 'Welcome to dashboard');
+            return redirect('admin/dashboard')->with('message', 'Welcome to dashboard');
         }
 
         return redirect('/home')->with('status', 'Logged in successfully');
